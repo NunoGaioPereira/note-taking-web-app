@@ -1,8 +1,12 @@
 /*COMMON*/
 
 :root {
-	--side-nav-width: 50px;
-	--main-color: #111;
+	--side-nav-width: 140px;
+	--main-color: #fff;
+	--background-contrast: #eee;
+	--main-contrast-color: #178ae5;
+	--secondary-contrast-color: #fff;
+	--background-color: #f6f5f1;
 }
 
 * {
@@ -14,6 +18,7 @@
 body {
 	/*font-family: Arial, Helvetica, sans-serif;*/
 	font-family: "Segoe UI", sans-serif;
+	background-color: var(--background-color);
 }
 
 a {
@@ -41,8 +46,55 @@ table {
 /* NAVIGATION */
 .side-nav {
 	width: var(--side-nav-width);
-	background-color: #111;
+	background-color: var(--main-color);
 	height: 100vh;
-	border-top-right-radius: 20px;
-	border-bottom-right-radius: 20px;
+	position: fixed;
+}
+
+.side-nav ul li {
+	/*padding: 15px 10px;*/
+	/*border-bottom: 1px solid #333;*/
+}
+
+
+.side-nav ul li a:hover {
+	/*color: lightblue;*/
+	background-color: var(--background-contrast);
+	/*border-left: 3px solid #fff; */
+}
+
+.side-nav ul li a {
+	/*color: var(--main-contrast-color);*/
+	color: #111;
+	padding: 12px 10px;
+	display: block;
+}
+
+.side-nav ul li a.active {
+	z-index: 999;
+	border-left: 4px solid var(--main-contrast-color);
+	background-color: var(--background-contrast);
+	padding-left: 6px;
+	color: var(--main-contrast-color);
+	/*padding-right: 5px;*/
+}
+
+/*.side-nav ul li a:after {
+	content: '';
+	display: inline-block;
+	position: absolute;
+	background-color: red;
+	width: 3px;
+	height: 20px;
+}*/
+
+.side-nav ul li a .fas {
+	width: 25px;
+	text-align: center;
+	margin-right: 5px 
+}
+
+.main-container {
+	margin-left: var(--side-nav-width);
+	padding: 20px;
 }
